@@ -5,7 +5,7 @@ import (
 )
 
 type UserRepository interface {
-	AddOrUpdate(user entity.User, isSave bool) error
+	AddOrUpdate(user entity.User, canSave bool) error
 	ValidateEmailId(emailId string, id int) (bool, error)
 	Get(emailId string) (*entity.User, error)
 }
@@ -13,11 +13,11 @@ type UserRepository interface {
 type userMysqlRepository struct {
 }
 
-func NewUserRepository() UserRepository {
+func NewUserRepository() *UserRepository {
 	return &userMysqlRepository{}
 }
 
-func (u *userMysqlRepository) AddOrUpdate(user entity.User, isSave bool) error {
+func (u *userMysqlRepository) AddOrUpdate(user entity.User, canSave bool) error {
 
 }
 
