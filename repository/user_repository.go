@@ -2,6 +2,7 @@ package repository
 
 import (
 	"github.com/bbcyyb/goarch/entity"
+	infra "github.com/bbcyyb/goarch/infrastructure"
 )
 
 type UserRepository interface {
@@ -11,20 +12,21 @@ type UserRepository interface {
 }
 
 type userMysqlRepository struct {
+	conn infra.DB
 }
 
 func NewUserRepository() *UserRepository {
-	return &userMysqlRepository{}
+	return &userMysqlRepository{conn: infra.C.DbConn}
 }
 
-func (u *userMysqlRepository) AddOrUpdate(user entity.User, canSave bool) error {
-
-}
-
-func (u *userMysqlRepository) ValidateEmailId(emailId string, id int) (bool, error) {
+func (self *userMysqlRepository) AddOrUpdate(user entity.User, canSave bool) error {
 
 }
 
-func (u *userMysqlRepository) Get(emailId string) (*entity.User, error) {
+func (self *userMysqlRepository) ValidateEmailId(emailId string, id int) (bool, error) {
+
+}
+
+func (self *userMysqlRepository) Get(emailId string) (*entity.User, error) {
 
 }

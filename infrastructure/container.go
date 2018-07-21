@@ -1,15 +1,15 @@
 package infrastructure
 
-type Container struct {
-	Config *Configuration
-}
+import (
+	"github.com/drgomesp/cargo"
+)
+
+type Container cargo.Container
 
 var C *Container
 
 func init() {
-	conf = NewConfiguration("conf", "sys")
+	dic := cargo.container.New()
 
-	C = &Container{
-		Config: conf,
-	}
+	C = dic
 }

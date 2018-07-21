@@ -11,22 +11,10 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
-var ormPool map[string]*DB
+type DB gorm.DB
 
-type DB struct {
-	gorm.DB
-}
-
-func init() {
-	OrmPool = make(map[string]*DB)
-}
-
-func NewOrmPool() map[string]*DB {
-	return ormPool
-}
-
-func InitOrm(dbname string) {
-	var orm *gorm.DB
+func NewOrm(dbname string) *DB {
+	var db *DB
 	var err error
 
 	// Default config
@@ -58,23 +46,20 @@ func InitOrm(dbname string) {
 	// Debug mode
 	// GDB.LogMode(true)
 
-	for orm, err = gorm.Open(dbType, connectString); err != nil; {
+	for db, err = gorm.Open(dbType, connectString); err != nil; {
 		fmt.Println("Data connection error, retry after 5s")
 		time.Sleep(5 * time.Second)
-		orm, err = gorm.Open(dbType, connectString)
+		db, err = gorm.Open(dbType, connectString)
 	}
 
 	// size of idle connection pool
-	orm.DB.SetMaxIdleConns(C.Config.GetInt(dbname + ".idleconns_max"))
+	db.DB.SetMaxIdleConns(C.Config.GetInt(dbname + ".idleconns_max"))
 	// max connection count
-	orm.DB.SetMaxOpenConns(C.Config.GetInt(dbname + ".openconns_max"))
-	OrmPool[dbname] = orm
-}
+	db.DB.SetMaxOpenConns(C.Config.GetInt(dbname + ".openconns_max"))
 
-func (this *OrmPool) GetOrm(dbname string) *DB {
-	return OrmPool[dbname]
-}
+	db.SingularTable(true)
 
-func (this *OrmPool) GetOrmByDefault() *DB {
-	return OrmPool["dbDefault"]
+	db.AutoMigrate(&entity.User{})
+
+	return db
 }
