@@ -1,0 +1,13 @@
+package: github.com/bbcyyb/goarch
+import:
+- package: github.com/drgomesp/cargo
+  version: ^1.0.0
+- package: github.com/jinzhu/gorm
+  version: ^1.9.1
+  subpackages:
+  - dialects/mssql
+  - dialects/mysql
+  - dialects/postgres
+  - dialects/sqlite
+- package: github.com/spf13/viper
+  version: ^1.0.2

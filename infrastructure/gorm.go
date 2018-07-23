@@ -7,10 +7,10 @@ import (
 	"time"
 
 	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialcts/mssql"
-	_ "github.com/jinzhu/gorm/dialcts/postgres"
-	_ "github.com/jinzhu/gorm/dialcts/sqlite"
+	_ "github.com/jinzhu/gorm/dialects/mssql"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
+	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
 
 type DB gorm.DB

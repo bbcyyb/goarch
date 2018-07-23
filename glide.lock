@@ -1,0 +1,83 @@
+hash: 11355807139368a8984a9e748dbcda643a7b150db648eb2813060834f646142b
+updated: 2018-07-23T14:44:33.936376935+08:00
+imports:
+- name: cloud.google.com/go
+  version: 15ebef8a76b24297d4e908e81af5df1569f5ccaf
+  subpackages:
+  - civil
+- name: github.com/denisenkom/go-mssqldb
+  version: 242fa5aa1b45aeb9fcdfeee88822982e3f548e22
+  subpackages:
+  - internal/cp
+- name: github.com/drgomesp/cargo
+  version: bfe17485e6b36c22a2be0f0a818daf3ecb866eea
+- name: github.com/fsnotify/fsnotify
+  version: c2828203cd70a50dcccfb2761f8b1f8ceef9a8e9
+- name: github.com/go-sql-driver/mysql
+  version: 99ff426eb706cffe92ff3d058e168b278cabf7c7
+- name: github.com/hashicorp/hcl
+  version: ef8a98b0bbce4a65b5aa4c368430a80ddc533168
+  subpackages:
+  - hcl/ast
+  - hcl/parser
+  - hcl/printer
+  - hcl/scanner
+  - hcl/strconv
+  - hcl/token
+  - json/parser
+  - json/scanner
+  - json/token
+- name: github.com/jinzhu/gorm
+  version: 6ed508ec6a4ecb3531899a69cbc746ccf65a4166
+  subpackages:
+  - dialects/mssql
+  - dialects/mysql
+  - dialects/postgres
+  - dialects/sqlite
+- name: github.com/jinzhu/inflection
+  version: 04140366298a54a039076d798123ffa108fff46c
+- name: github.com/lib/pq
+  version: 90697d60dd844d5ef6ff15135d0203f65d2f53b8
+  subpackages:
+  - hstore
+  - oid
+- name: github.com/magiconair/properties
+  version: c2353362d570a7bfa228149c62842019201cfb71
+- name: github.com/mattn/go-sqlite3
+  version: b3511bfdd742af558b54eb6160aca9446d762a19
+- name: github.com/mitchellh/mapstructure
+  version: 00c29f56e2386353d58c599509e8dc3801b0d716
+- name: github.com/pelletier/go-toml
+  version: 5c5490133daa8660ec676ca8b096cc27e223beaa
+- name: github.com/spf13/afero
+  version: 787d034dfe70e44075ccc060d346146ef53270ad
+  subpackages:
+  - mem
+- name: github.com/spf13/cast
+  version: 8965335b8c7107321228e3e3702cab9832751bac
+- name: github.com/spf13/jwalterweatherman
+  version: 7c0cea34c8ece3fbeb2b27ab9b59511d360fb394
+- name: github.com/spf13/pflag
+  version: 3ebe029320b2676d667ae88da602a5f854788a8a
+- name: github.com/spf13/viper
+  version: b5e8006cbee93ec955a89ab31e0e3ce3204f3736
+- name: golang.org/x/crypto
+  version: a2144134853fc9a27a7b1e3eb4f19f1a76df13c9
+  subpackages:
+  - md4
+- name: golang.org/x/sys
+  version: ac767d655b305d4e9612f5f6e33120b9176c4ad4
+  subpackages:
+  - unix
+- name: golang.org/x/text
+  version: 367d765ae293e2b5781a597dd9d433117e82fc51
+  subpackages:
+  - transform
+  - unicode/norm
+- name: google.golang.org/appengine
+  version: b1f26356af11148e710935ed1ac8a7f5702c7612
+  subpackages:
+  - cloudsql
+- name: gopkg.in/yaml.v2
+  version: 5420a8b6744d3b0345ab293f6fcba19c978f1183
+testImports: []

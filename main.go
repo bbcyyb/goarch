@@ -1,13 +1,15 @@
 package main
 
 import (
+	"fmt"
+
 	infra "github.com/bbcyyb/goarch/infrastructure"
 	repo "github.com/bbcyyb/goarch/repository"
 	svc "github.com/bbcyyb/goarch/service"
 )
 
 func main() {
-
+	fmt.Println("Hello World")
 }
 
 func init() {
